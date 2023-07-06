@@ -1,34 +1,57 @@
-import React, { useEffect } from 'react';
-import { MapContainer, TileLayer, HeatLayer } from 'react-leaflet';
+import React, { useEffect,useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
 
-// const Heatmap = () => {
-//   useEffect(() => {
-//     // Datos de ejemplo para el mapa de calor
-//     const heatData = [
-//       [51.505, -0.09, 0.2],
-//       [51.51, -0.1, 0.5],
-//       [51.51, -0.12, 0.6],
-//       // Agrega más puntos de datos aquí
-//     ];
+ const Heatmap = () => {
+   const [ubicaciones, setUbicaciones] = useState([]);
 
-//     // Configuración del mapa de calor
-//     const heatOptions = {
-//       radius: 20,
-//       blur: 10,
-//     };
+  useEffect(() => {
+    fetch('/ListaViolencia.json')
+      .then(response => response.json())
+      .then(data => setUbicaciones(data))
+      .catch(error => console.error('Error al cargar el archivo JSON:', error));
+  }, []);
 
-//     // Código para inicializar el mapa de Leaflet
-//     const map = L.map('map').setView([51.505, -0.09], 13);
+  //iconos para los marcadores
+  const iconVFamimiar = new L.icon({ 
+    iconUrl: "/explotar.png",
+    iconSize: [25, 25]  
+  });
+  const iconVGenero = new L.icon({
+    iconUrl: "/hombre.png",
+    iconSize: [60, 60]
+  });
+  const iconVSexual = new L.icon({
+    iconUrl: "/no-violencia.png",
+    iconSize: [60, 60]
+  });
 
-//     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-//     }).addTo(map);
+  return (
 
-//     // Código para agregar la capa de mapa de calor
-//     L.heatLayer(heatData, heatOptions).addTo(map);
-//   }, []);
+    <MapContainer center= {[2.43823,-76.61316]} zoom ={15}>
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+      />
 
-//   return <div id="map" style={{ height: '500px' }} />;
-// };
 
-// export default Heatmap;
+      {ubicaciones.map((ubicacion) => (
+        <Marker
+          key={ubicacion.id} 
+          position={[ubicacion.latitud, ubicacion.longitud]}
+          icon={ubicacion.tipo === "violencia sexual" ? iconVSexual : ubicacion.tipo === "Violencia intrafamiliar" ? iconVFamimiar : iconVGenero}
+          >
+          <Popup>
+            <h2>{ubicacion.nombre}</h2>
+            <p>{ubicacion.descripcion}</p>
+          </Popup>
+
+          </Marker> 
+                
+          ))}
+    </MapContainer>
+    
+  );
+}
+
+export default Heatmap;
