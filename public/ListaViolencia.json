@@ -1,0 +1,92 @@
+[
+    {
+      "id": 1,
+      "nombre": "Casa de la Cultura",
+      "latitud": 2.455335,
+      "longitud": -76.597160,
+      "descripcion": "Casa de la Cultura de Popayán",
+      "tipo": "violencia sexual"
+
+    },  
+    {
+      "id": 2,
+      "nombre": "Casa de la Cultura",
+      "latitud": 2.456175,
+      "longitud": -76.596471,
+      "descripcion": "Casa de la Cultura de Popayán",
+      "tipo": "Violencia intrafamiliar"
+
+    },
+    {
+      "id": 3,
+      "nombre": "Casa de la Cultura", 
+      "latitud": 2.452589,
+      "longitud":  -76.598811,
+      "descripcion": "Casa de la Cultura de Popayán",
+      "tipo": "Violencia de género"
+
+    },
+    {
+      "id": 4,
+      "nombre": "Casa de la Cultura",
+      "latitud": 2.454516,
+      "longitud": -76.592870,
+      "descripcion": "Casa de la Cultura de Popayán",
+      "tipo": "violencia sexual"
+
+    },
+    { 
+      "id": 5,
+      "nombre": "Casa de la Cultura",
+      "latitud": 2.451518,
+      "longitud": -76.605169,
+      "descripcion": "Casa de la Cultura de Popayán",
+      "tipo": "Violencia sexual"
+
+     },
+    {
+      "id": 6,
+      "nombre": "Casa de la Cultura",
+      "latitud": 2.443053,
+      "longitud": -76.612845,
+      "descripcion": "Casa de la Cultura de Popayán",
+      "tipo": "violencia intrafamiliar"
+
+    },
+    {
+      "id": 7,
+      "nombre": "Casa de la Cultura",
+      "latitud": 2.440353,
+      "longitud": -76.611921,
+      "descripcion": "Casa de la Cultura de Popayán",
+      "tipo": "violencia de género"
+
+    },
+    {
+      "id": 8,
+      "nombre": "Casa de la Cultura",
+      "latitud":2.442037,
+      "longitud": -76.606465,
+      "descripcion": "Casa de la Cultura de Popayán",
+      "tipo": "Violencia de género"
+
+    },
+    {
+      "id": 9,
+      "nombre": "Casa de la Cultura",
+      "latitud": 2.440764,
+      "longitud": -76.607032,
+      "descripcion": "Casa de la Cultura de Popayán",
+      "tipo": "Violencia intrafamiliar"
+
+    },
+    { 
+      "id": 10,
+      "nombre": "Casa de la Cultura",
+      "latitud": 2.440961,
+      "longitud": -76.608051,
+      "descripcion": "Casa de la Cultura de Popayán",
+      "tipo": "Violencia sexual"
+
+    }
+  ]
